@@ -35,6 +35,7 @@ class StateHome extends GameState {
 
     teardown() {
         document.body.removeEventListener('keydown', this.keyEvents);
+        document.body.removeEventListener('pointerdown', this.clickEvent);
     }
 }
 
