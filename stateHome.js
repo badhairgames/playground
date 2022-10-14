@@ -13,8 +13,13 @@ class StateHome extends GameState {
                     break;
                 }
         };
+        
+        this.clickEvent = (e) => {
+            this.game.changeState(this.game.statePlay);
+        };
 
         document.body.addEventListener('keydown', this.keyEvents);
+        document.body.addEventListener('pointerdown', this.clickEvent);
     }
 
     update(elapsed) {
