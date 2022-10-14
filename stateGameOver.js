@@ -14,7 +14,12 @@ class StateGameOver extends GameState {
                 }
         };
 
+        this.clickEvent = (e) => {
+            this.game.changeState(this.game.statePlay);
+        };
+
         document.body.addEventListener('keydown', this.keyEvents);
+        document.body.addEventListener('pointerdown', this.clickEvent);
 
         this.sound = new Audio('sounds/gameover.mp3');
         this.sound.play();
@@ -54,6 +59,7 @@ class StateGameOver extends GameState {
     
     teardown() {
         document.body.removeEventListener('keydown', this.keyEvents);
+        document.body.removeEventListener('pointerdown', this.clickEvent);
     }
 }
 
